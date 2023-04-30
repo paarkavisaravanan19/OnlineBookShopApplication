@@ -10,6 +10,7 @@ using System.Xml.Linq;
 
 namespace OnlineBookShop.Views.Seller
 {
+
     public partial class Selling : System.Web.UI.Page
     {
         Models.Functions Con;
