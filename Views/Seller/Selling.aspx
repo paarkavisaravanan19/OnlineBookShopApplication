@@ -47,7 +47,7 @@
                     <div class="col">
                         <div class="mt-3">
                               <label for="" class="form-label text-success">Date</label>
-                              <input type="datetime"  class="form-control" id="DateTb"  runat="server"/>
+                              <input type="date"  class="form-control" id="DateTb"  runat="server"/>
                         </div>
                     </div>
                     
