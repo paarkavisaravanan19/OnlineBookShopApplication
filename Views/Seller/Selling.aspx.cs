@@ -30,7 +30,9 @@ namespace OnlineBookShop.Views.Seller
                     new DataColumn("Price"),
                     new DataColumn("Quantity"),
                     new DataColumn("Total")
+                    
                 });
+                
                 ViewState["Bill"] = dt;
                 this.BindGrid();
             }

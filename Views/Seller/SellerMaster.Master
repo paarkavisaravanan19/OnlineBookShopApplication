@@ -38,27 +38,6 @@
 
                 </div>
                 <div class="mb-3">
-                    &nbsp; <img src="../../Assets/Images/user typing.png" height="50" width="40" />
-                
-                <a href="#"><label>Authors</label></a>
-
-                </div>
-                <div class="mb-3">
-                    <img src="../../Assets/Images/admin.png" height="50" width="40" />
-                
-                <a href="#"><label>Sellers</label></a>
-
-                </div>
-            <div class="mb-3">
-                    <img src="../../Assets/Images/category.png" height="50" width="40" />
-                
-                <a href="#"><label>Categories</label></a>
-
-                </div>
-                    <div style="height:100px">
-
-                    </div>
-                <div class="mb-3">
                     <img src="../../Assets/Images/home.png" height="50" width="40" />
                 
                 <a href="../Login.aspx"><label>Logout</label></a>

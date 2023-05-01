@@ -38,7 +38,7 @@ namespace OnlineBookShop.Views.Admin
                     Query = string.Format(Query, CName, CDesc);
                     Con.SetData(Query);
                     ShowCategories();
-                    ErrMsg.Text = "Category Inserted!!";
+                    ErrMsg.Text = "Category Details are Inserted Successfully!!";
                     CatNameTb.Value = "";
                     DescriptionTb.Value = "";
                 }
@@ -79,7 +79,7 @@ namespace OnlineBookShop.Views.Admin
                     Query = string.Format(Query, CName, CDesc, CategoriesList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);
                     ShowCategories();
-                    ErrMsg.Text = "Category Updated!!";
+                    ErrMsg.Text = "Category Details are Updated Successfully!!";
                     CatNameTb.Value = "";
                     DescriptionTb.Value = "";
                 }
@@ -106,7 +106,7 @@ namespace OnlineBookShop.Views.Admin
                     Query = string.Format(Query, CategoriesList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);
                     ShowCategories();
-                    ErrMsg.Text = "Category Deleted!!";
+                    ErrMsg.Text = "Category Details are Deleted Successfully!!";
                     CatNameTb.Value = "";
                     DescriptionTb.Value = "";
                 }
