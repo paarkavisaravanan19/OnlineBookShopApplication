@@ -15,10 +15,10 @@
     
   </li>
   </ul>
-  <li>User
+  <li>User(Sales Person in the Organisation)
     <ul>
-      <li>View Book Details, Seller, Authors and Categories provided by Admin.</li>
-      <li>Can buy the book along with bill generated.</li>
+      <li>View Book Details provided by Admin.</li>
+      <li>Can perform billing based on the customer choice.</li>
       <li>When a book is sold, the stock is reduced.</li>
       <li>You can print your bill.</li>
 </ul>
