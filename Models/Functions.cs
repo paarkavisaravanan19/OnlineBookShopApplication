@@ -14,6 +14,7 @@ namespace OnlineBookShop.Models
         private DataTable dt;
         private SqlDataAdapter sda;
         private string ConStr;
+        //declaring server connection for get and set data
         public Functions() 
         {
             ConStr = @"Data Source = 3SJ6SF2; Initial Catalog = BookShopASPDB; Integrated Security = True; Encrypt = False;

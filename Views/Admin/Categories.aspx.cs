@@ -12,11 +12,13 @@ namespace OnlineBookShop.Views.Admin
         Models.Functions Con;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //declaring and initializing the connection module
             Con = new Models.Functions();
             ShowCategories();
         }
         public void ShowCategories()
         {
+            //displaying category details
             string Query = "Select * from CategoryTbl";
             CategoriesList.DataSource = Con.GetData(Query);
             CategoriesList.DataBind();
@@ -32,6 +34,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //inserting categories record inside the respective table
                     string CName = CatNameTb.Value;
                     string CDesc =DescriptionTb.Value;
                     string Query = "insert into CategoryTbl values( '{0}','{1}')";
@@ -51,6 +54,7 @@ namespace OnlineBookShop.Views.Admin
         int Key = 0;
         protected void CategoriesList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //displaying category module in the table format
             CatNameTb.Value = CategoriesList.SelectedRow.Cells[2].Text;
             DescriptionTb.Value = CategoriesList.SelectedRow.Cells[3].Text;
             if (CatNameTb.Value == "")
@@ -73,6 +77,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //performing updation
                     string CName = CatNameTb.Value;
                     string CDesc = DescriptionTb.Value;
                     string Query = "update CategoryTbl set CatName ='{0}',CatDescription='{1}' where CatId = {2}";
@@ -100,6 +105,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //deleting record from the table
                     string CName = CatNameTb.Value;
                     string CDesc = DescriptionTb.Value;
                     string Query = "delete from CategoryTbl where CatId = {0}";

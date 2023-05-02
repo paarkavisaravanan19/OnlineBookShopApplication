@@ -24,12 +24,14 @@ namespace OnlineBookShop.Views
             {
                 ErrMsg.Text = "Specify all the mentioned Details!!";
             }
+            //login credentials
             else if(UnameTb.Value=="admin@gmail.com" && PasswordTb.Value=="Password")
             {
                 Response.Redirect("Admin/Books.aspx");
             }
             else
             {
+                //selecting and giving authorize only to the seller that are been given by ADMIN
                 string Query = "Select * from SelTbl where SelEmail ='{0}' and SelPass='{1}'";
                 Query = string.Format(Query, UnameTb.Value,PasswordTb.Value);
                 DataTable dt= Con.GetData(Query);

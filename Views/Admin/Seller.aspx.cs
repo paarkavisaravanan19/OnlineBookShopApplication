@@ -12,11 +12,13 @@ namespace OnlineBookShop.Views.Admin
         Models.Functions Con;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //declaring and initializing model function
             Con = new Models.Functions();
             ShowSeller();
         }
         public void ShowSeller()
         {
+            //displaying the data 
             string Query = "Select * from SelTbl";
             SellerList.DataSource = Con.GetData(Query);
             SellerList.DataBind();
@@ -32,6 +34,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //performing insertion
                     string SName = SNameTb.Value;
                     string SMail = EmailTb.Value;
                     string SPhone = PhoneTb.Value;
@@ -56,6 +59,7 @@ namespace OnlineBookShop.Views.Admin
         int Key = 0;
         protected void SellerList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //displaying in a table format
             SNameTb.Value = SellerList.SelectedRow.Cells[2].Text;
             EmailTb.Value = SellerList.SelectedRow.Cells[3].Text;
             PhoneTb.Value = SellerList.SelectedRow.Cells[4].Text;
@@ -81,6 +85,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //performing updation
                     string SName = SNameTb.Value;
                     string SMail = EmailTb.Value;
                     string SPhone = PhoneTb.Value;
@@ -112,6 +117,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //performing deletion
                     string Query = "delete from SelTbl where SelId={0}";
                     Query = string.Format(Query,SellerList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);

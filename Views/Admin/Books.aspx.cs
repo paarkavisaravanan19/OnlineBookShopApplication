@@ -12,9 +12,11 @@ namespace OnlineBookShop.Views.Admin
         Models.Functions Con;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //declaring and initializing the connections
             Con = new Models.Functions();
             if (!IsPostBack)
             {
+                //getting all the method to be shown in BOOKS MODULE
                 ShowBooks();
                 GetCategories();
                 GetAuthors();
@@ -23,12 +25,14 @@ namespace OnlineBookShop.Views.Admin
         }
         private void ShowBooks()
         {
+            //displaying all the Books details in the drop down list
             string Query = "select * from BookTbl";
             BooksList.DataSource = Con.GetData(Query);
             BooksList.DataBind();
         }
         private void GetCategories()
         {
+            //displaying all the categories in the drop down list
             string Query = "select * from CategoryTbl";
             BCatCb.DataTextField = Con.GetData(Query).Columns["CatName"].ToString();
             BCatCb.DataValueField = Con.GetData(Query).Columns["CatId"].ToString();
@@ -38,6 +42,7 @@ namespace OnlineBookShop.Views.Admin
         }
         private void GetAuthors()
         {
+            //displaying all the Authors in the drop down list
             string Query = "select * from AuthorTbl";
             BAuthCb.DataTextField = Con.GetData(Query).Columns["AutName"].ToString();
             BAuthCb.DataValueField = Con.GetData(Query).Columns["AutId"].ToString();
@@ -55,6 +60,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //performing insertion in the book details by the admin
                     string BName = BNameTb.Value;
                     string BAuth = BAuthCb.SelectedValue.ToString();
                     string BCategory = BCatCb.SelectedValue.ToString();
@@ -81,7 +87,7 @@ namespace OnlineBookShop.Views.Admin
         int Key = 0;
         protected void BooksList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //Displaying BookDetails in Table Format
             BNameTb.Value = BooksList.SelectedRow.Cells[2].Text;
             BAuthCb.SelectedValue = BooksList.SelectedRow.Cells[3].Text;
             BCatCb.SelectedValue = BooksList.SelectedRow.Cells[4].Text;
@@ -108,6 +114,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //Performing Updation
                     string BName = BNameTb.Value;
                     string BAuth = BAuthCb.SelectedValue.ToString();
                     string BCategory = BCatCb.SelectedValue.ToString();
@@ -142,6 +149,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //deleting record from the server
                     string BName = BNameTb.Value;
                     string BAuth = BAuthCb.SelectedValue.ToString();
                     string BCategory = BCatCb.SelectedValue.ToString();

@@ -13,6 +13,7 @@ namespace OnlineBookShop.Views.Seller
 
     public partial class Selling : System.Web.UI.Page
     {
+        //initializing model and inheriting the seller details from login page
         Models.Functions Con;
         int SellerId = WebForm1.User;
         string SName = WebForm1.UName;
@@ -22,6 +23,7 @@ namespace OnlineBookShop.Views.Seller
             if (!IsPostBack)
             {
                 ShowBooks();
+                //details for displaying bills
                 DataTable dt= new DataTable();
                 dt.Columns.AddRange(new DataColumn[5]
                 {
@@ -68,6 +70,7 @@ namespace OnlineBookShop.Views.Seller
         }
         private void InsertBill()
         {
+            //inserting records for formating bill
             string Query = "insert into BillTbl values({0},{1})";
             Query = string.Format(Query, SellerId, GrdTotal);
             Con.SetData(Query);
@@ -80,6 +83,7 @@ namespace OnlineBookShop.Views.Seller
 
         private void UpdateStock()
         {
+            //updating stock based on count 
             int NewQty;
             NewQty = Convert.ToInt32(BooksList.SelectedRow.Cells[3].Text) - Convert.ToInt32(BQtyTb.Value);
             string Query = "update BookTbl set BQty= {0} where BId={1}";
@@ -98,6 +102,7 @@ namespace OnlineBookShop.Views.Seller
             }
             else
             {
+                //inserting that into bill and based on total
                 int total = Convert.ToInt32(BQtyTb.Value) * Convert.ToInt32(BPriceTb.Value);
                 DataTable dt = (DataTable)ViewState["Bill"];
                 dt.Rows.Add(BillList.Rows.Count + 1,

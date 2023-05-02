@@ -9,14 +9,17 @@ namespace OnlineBookShop.Views.Admin
 {
     public partial class Author : System.Web.UI.Page
     {
+        //declaring model
         Models.Functions Con;
         protected void Page_Load(object sender, EventArgs e)
         {
             Con= new Models.Functions();
+            //calling method
             ShowAuthors();
         }
         private void ShowAuthors()
         {
+            //book details display from server
             string Query = "Select * from AuthorTbl";
             AuthorsList.DataSource = Con.GetData(Query);
             AuthorsList.DataBind();
@@ -32,6 +35,7 @@ namespace OnlineBookShop.Views.Admin
                 }
                 else
                 {
+                    //inserting book details by the admin
                     string AName = ANameTb.Value;
                     string Gender= GenCb.SelectedItem.ToString();
                     string Country=CountryCb.SelectedItem.ToString();
@@ -53,6 +57,7 @@ namespace OnlineBookShop.Views.Admin
         int Key = 0;
         protected void AuthorsList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //visualizing the book details in the table format
             ANameTb.Value = AuthorsList.SelectedRow.Cells[2].Text;
             GenCb.SelectedItem.Value = AuthorsList.SelectedRow.Cells[3].Text;
             CountryCb.SelectedItem.Value = AuthorsList.SelectedRow.Cells[4].Text;
@@ -69,6 +74,7 @@ namespace OnlineBookShop.Views.Admin
 
         protected void EditBtn_Click(object sender, EventArgs e)
         {
+            //updating book details
             try
             {
                 if (ANameTb.Value == "" || GenCb.SelectedIndex == -1 || CountryCb.SelectedIndex == -1)
@@ -98,6 +104,7 @@ namespace OnlineBookShop.Views.Admin
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
+            //deleting the record from the server based on bookId
             try
             {
                 if (ANameTb.Value == "" || GenCb.SelectedIndex == -1 || CountryCb.SelectedIndex == -1)
