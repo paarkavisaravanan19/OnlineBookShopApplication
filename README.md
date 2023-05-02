@@ -17,7 +17,7 @@
   </ul>
   <li>User(Sales Person in the Organisation)
     <ul>
-      <li>View Book Details provided by Admin.</li>
+      <li>View Book, Authors and Categories Detail provided by Admin.</li>
       <li>Can perform billing based on the customer choice.</li>
       <li>When a book is sold, the stock is reduced.</li>
       <li>You can print your bill.</li>
