@@ -33,8 +33,9 @@ Database Design has been attached along with Source Code. Sample Bills of the Pu
 <li>Technology Stack Used:
     <ul>
       <li>ASP.NET Web Forms</li>
+      <li>ASP.NET Web Forms Data Grid and Controls</li>
       <li>C#</li>
-      <li>SQL Server</li>
+      <li>Microsoft SQL Server</li>
       <li>HTML, CSS, JS</li>
       <li>Bootstrap</li>
       <li>ADO. Entity Data Model with Web API Controller for API Call functionalities.</li>
