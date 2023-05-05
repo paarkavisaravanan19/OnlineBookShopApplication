@@ -1,5 +1,5 @@
 # OnlineBookShopApplication
-# OnlineBookShop
+# Online BookShop Management
 <h1><b>Features:</b></h1>
 <h2><ul>
   <li>Admin
@@ -29,3 +29,13 @@
 <h2>Class Diagram</h2>
 <h2>
 Database Design has been attached along with Source Code. Sample Bills of the Purchase Books has been attached.</h2>
+<h2>
+<li>Technology Stack Used:
+    <ul>
+      <li>ASP.NET Web Forms</li>
+      <li>C#</li>
+      <li>SQL Server</li>
+      <li>Bootstrap</li>
+      <li>ADO. Entity Data Model with Web API Controller for API Call functionalities.</li>
+</ul>
+</h2>
